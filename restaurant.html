@@ -1,26 +1,49 @@
 <!DOCTYPE html>
-<html>
+<!-- Source: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<!-- Source: https://www.w3schools.com/tags/att_lang.asp -->
+<!-- Souce: language attibute set based on feedback from a Udacity reviewer for the first version of this project submitted.-->
+<html lang="en">
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Normalize.css for better cross-browser consistency -->
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Main CSS file -->
   <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" type="text/css" media="screen and (min-width: 428px)" href="css/styles-428plus.css">
+  <link rel="stylesheet" type="text/css" media="screen and (min-width: 498px)" href="css/styles-498plus.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
   <title>Restaurant Info</title>
+  <!-- Source: https://stackoverflow.com/a/39318247 -->
+  <link rel="shortcut icon" href="img/logo_72x72.ico">
 </head>
 
+<!-- Source: https://dequeuniversity.com/rules/axe/3.0/tabindex -->
+<!-- Source: http://accessibility.psu.edu/forms/tabform/ -->
+<!-- Source: https://www.wufoo.com/html5/tabindex-attribute/ -->
 <body class="inside">
   <!-- Beginning header -->
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <div id="nav-content-container">
+          <a title="Home" href="/">
+            <div>
+              <img src="/img/logo.png" alt="Logo: a stylized, blue, letter 'R' enclosed in two closely-seperated blue rings.">
+              <h1 id="nav-h1" aria-label="Restaurant Reviews"><span aria-hidden="true">estaurant Reviews</span></h1>
+            </div>
+          </a>
+      </div>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
-    </ul>
+    <!-- Source: https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html -->
+    <nav aria-label="Breadcrumb" id="breadcrumb-container">
+      <div id="breadcrumb-content-container">
+        <ol aria-label="Breadcrumb" id="breadcrumb">
+          <li><a href="/">Home</a></li>
+        </ol>
+      </div>
+    </div>
     <!-- End breadcrumb -->
     <!-- End nav -->
   </header>
@@ -30,16 +53,23 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map"></div>
+        <p id="map-is-radio">* Use arrow keys to navigate through elements inside map; press enter to trigger a focused element's functionality.</p>
+        <!-- The map is hidden from screen readers, its content also available in the restaurant list; thus, ARIA labels not implimented on the map radio group -->
+        <div id="map" aria-hidden="true"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
-    <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+    <section id="restaurant-container" title="Restaurant Details" tabindex="-1">
+      <!-- Source: format for multi-line HTML comment from: https://www.tutorialspoint.com/html/html_comments -->
+      <!-- 
+        Source: use of 'h2' tag here in light of previous appearance of 'h1' on page implemented
+        based on feedback from a Udacity reviewier on the first submission of this project.
+       -->
+      <h2 id="restaurant-name" tabindex="0"></h2>
+      <img id="restaurant-img" tabindex="0">
+      <p id="restaurant-cuisine" tabindex="0"></p>
+      <p id="restaurant-address" tabindex="0"></p>
+      <table aria-label="restaurant hours" id="restaurant-hours" tabindex="0"></table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
@@ -52,7 +82,8 @@
 
   <!-- Beginning footer -->
   <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    <p><span title="Copyright">&copy;</span> 2018 <a href="/" title="Home"><strong>Restaurant Reviews</strong></a> All Rights Reserved.</p>
+    <button id="top-of-page-button">Top of Page</button>
   </footer>
   <!-- End footer -->
   <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
@@ -61,8 +92,6 @@
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
   <script type="text/javascript" src="js/restaurant_info.js"></script>
-  <!-- Google Maps -->
- <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
   <!-- End scripts -->
 
 </body>

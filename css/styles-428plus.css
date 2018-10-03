@@ -1,0 +1,9 @@
+nav h1 {
+    font-size: 1.5em;
+    padding: 1.15em 0;
+}
+
+#nav-content-container {
+    padding-left: calc(5% + 1em);
+    padding-top: 0;
+}
