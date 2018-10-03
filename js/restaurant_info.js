@@ -94,7 +94,7 @@ function altTextLookUp(restaurantName) {
     'Kang Ho Dong Baekjeong': 'The dining area at Kang Ho Dong Baekjeong, featuring an open floor plan, exposed ductwork and modernist-style wood chairs and wood dining tables that include built-in cooking grills.',
     'Katz\'s Delicatessen': 'A nightime scene of pedestrians passing by the entrance of Katz\'s Delicatessen while diners stand at counters inside, visible through large windows on the corner of a single-story brick building.',
     'Roberta\'s Pizza': 'Diners sitting at tables in Roberta\'s Pizza, in front of a walk-up counter and open kitchen; Christmas lights, coat hooks, a globe lamp and posters adorn the walls.',
-    'Superiority Burger': 'Two men walk a small dog past Superiority Burger while inside customers gather in long, narrow and brightly-lit space. An all-white exterior facade features the restaurant\'s name in fridge-magnet-style-letters.',
+    'Superiority Burger': 'Two men walk a small dog past Superiority Burger while inside customers gather in a long, narrow and brightly-lit space. An all-white exterior facade features the restaurant\'s name in fridge-magnet-style-letters.',
     'Hometown BBQ': 'Diners in Hometown BBQ seated on wooden folding chairs at small square tables in a rustic and cavernous space featuring a large, weathered, US flag on the far wall.',
     'The Dutch': 'Exterior of The Dutch restaurant on the groundfloor of a grey brick building; the restaurant\'s name is displayed in modernist-style letters on a blue background above the restaurant\'s awning.',
     'Mu Ramen': 'Diners sit at a glossy wooden table in Mu Ramen, where an open kitchen lines the wall behind them.',
